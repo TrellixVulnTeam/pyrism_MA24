@@ -1,6 +1,6 @@
 from pyrism.shape import Transform, Intersection
 from pyrism.rendering import Ray
-from pyshine.maths.vector import *
+from pyrism.pyshine.maphs.vector import *
 
 
 class Camera(Transform):

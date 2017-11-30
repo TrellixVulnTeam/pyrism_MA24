@@ -1,4 +1,4 @@
-from pyshine.maths.vector import *
+from pyrism.pyshine.maphs.vector import *
 from pyrism.rendering import Ray
 
 
