@@ -1,4 +1,2 @@
 # pyrism
-pyrism is aiming to be a realtime non-euclidian raytracer written in python
-
-written in python, pyrism aims to be a feature-packed lightweight and fast python raytracing engine.
+I am aiming for pyrism to be a fast, feature-packed but lightweight real-time non-euclidean raytracing engine written in python.
