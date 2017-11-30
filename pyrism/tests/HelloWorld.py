@@ -1,11 +1,23 @@
 import sys
+import sdl2
 import sdl2.ext
 
-sdl2.ext.init()
 
-window = sdl2.ext.Window("Hello World!", size=(640, 480))
-window.show()
+def run():
+    sdl2.ext.init()
+    window = sdl2.ext.Window("Hello World!", size=(640, 480))
 
-factory = sdl2.ext.SpriteFactory(sdl2.ext.SOFTWARE)
+    window.show()
+    running = True
+    while running:
+        events = sdl2.ext.get_events()
+        for event in events:
+            if event.type == sdl2.SDL_QUIT:
+                running = False
+                break
+        window.refresh()
+    return 0
 
-spriterenderer = factory.create_sprite_render_system(window)
+
+if __name__ == "__main__":
+    sys.exit(run())
