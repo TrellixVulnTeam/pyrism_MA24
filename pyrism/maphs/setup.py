@@ -1,4 +1,4 @@
 from distutils.core import setup
 from Cython.Build import cythonize
 
-setup(ext_modules=cythonize('pyrism/pyshine/maphs/vector.pyx'))
+setup(ext_modules=cythonize('pyrism/maphs/vec.pyx'))
