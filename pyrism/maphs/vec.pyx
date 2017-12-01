@@ -10,20 +10,13 @@ ctypedef struct vec2f:
 ctypedef struct vec3f:
     float x, y, z
 
-# for testing purposes only
-cdef vec3f v1
-v1.x = 20.0
-v1.y = 12.5
-v1.z = 2.87
+class Vec3f(object):
+    cpdef void test(self):
+        print('testing')
 
-cdef vec3f v2
-v2.x = 12.8
-v2.y = 86.6
-v2.z = 67.2
-
-def add_vec3f():
+def add_vec3f(vec3f a, vec3f b):
     cdef vec3f v
-    v.x = v1.x + v2.x
-    v.y = v1.y + v2.y
-    v.z = v1.z + v2.z
+    v.x = a.x + b.x
+    v.y = a.y + b.y
+    v.z = a.z + b.z
     return v
