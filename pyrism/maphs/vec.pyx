@@ -11,8 +11,8 @@ ctypedef struct vec3f:
     float x, y, z
 
 class Vec3f(object):
-    cpdef void test(self):
-        print('testing')
+     def __init__(self, float x, float y, float z):
+        self.x, self.y, self.z = x, y, z
 
 def add_vec3f(vec3f a, vec3f b):
     cdef vec3f v
