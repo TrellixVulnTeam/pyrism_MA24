@@ -2,6 +2,7 @@ import sys
 import sdl2
 import sdl2.ext
 
+
 def run():
     sdl2.ext.init()
     window = sdl2.ext.Window("Hello World!", size=(640, 480))
