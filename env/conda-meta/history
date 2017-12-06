@@ -25,3 +25,7 @@
 +defaults::mkl-2018.0.1-h2108138_4
 +defaults::numpy-1.13.3-py36ha320f96_0
 # install specs: numpy
+==> 2017-12-06 15:43:24 <==
+# cmd: C:\Users\Famille\Miniconda3\Scripts\conda remove -p C:/Users/Famille/PycharmProjects/pyrism/env pyopengl-accelerate -y
+-defaults::pyopengl-accelerate-3.1.1a1-np113py36_0
+# remove specs: pyopengl-accelerate

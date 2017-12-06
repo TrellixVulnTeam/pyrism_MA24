@@ -4,10 +4,13 @@ from OpenGL.GL import *
 from pyrism.window import Window
 from pyrism.shader import Shader
 
+from pyrism.model import Model
+
 here = os.path.dirname(__file__)
 
 def run():
     width, height = 640, 480
+    model = Model(os.path.join(here, '..\\quad.obj'))
     window = Window(width, height, "demo")
     shader = Shader(os.path.join(here, '..\\shaders\\standard'), 'standard')
     glClearColor(0.0, 0.0, 0.0, 1.0)
@@ -20,18 +23,10 @@ def run():
                 break
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
 
-        shader.bind()
-        glBegin(GL_TRIANGLES)
-        glVertex3d(-1.0,-1.0, 0.0)
-        glVertex3d(1.0,-1.0, 0.0)
-        glVertex3d(-1.0,1.0, 0.0)
-        glVertex3d(1.0,1.0, 0.0)
-        glEnd()
-
         window.refresh()
 
-    del shader
     del window
+    del shader
     return 0
 
 
