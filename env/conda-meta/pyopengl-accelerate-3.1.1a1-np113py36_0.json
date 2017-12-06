@@ -1,0 +1,50 @@
+{
+  "arch": "x86_64",
+  "auth": null,
+  "build": "np113py36_0",
+  "build_number": 0,
+  "channel": "https://repo.continuum.io/pkgs/free/win-64",
+  "date": "2017-06-07",
+  "depends": [
+    "numpy 1.13*",
+    "pyopengl 3.1.1a1",
+    "python 3.6*"
+  ],
+  "files": [
+    "Lib/site-packages/OpenGL_accelerate/__init__.py",
+    "Lib/site-packages/OpenGL_accelerate/__pycache__/__init__.cpython-36.pyc",
+    "Lib/site-packages/OpenGL_accelerate/arraydatatype.cp36-win_amd64.pyd",
+    "Lib/site-packages/OpenGL_accelerate/buffers_formathandler.cp36-win_amd64.pyd",
+    "Lib/site-packages/OpenGL_accelerate/errorchecker.cp36-win_amd64.pyd",
+    "Lib/site-packages/OpenGL_accelerate/formathandler.cp36-win_amd64.pyd",
+    "Lib/site-packages/OpenGL_accelerate/latebind.cp36-win_amd64.pyd",
+    "Lib/site-packages/OpenGL_accelerate/nones_formathandler.cp36-win_amd64.pyd",
+    "Lib/site-packages/OpenGL_accelerate/numpy_formathandler.cp36-win_amd64.pyd",
+    "Lib/site-packages/OpenGL_accelerate/vbo.cp36-win_amd64.pyd",
+    "Lib/site-packages/OpenGL_accelerate/wrapper.cp36-win_amd64.pyd",
+    "Lib/site-packages/PyOpenGL_accelerate-3.1.1a1-py3.6.egg-info"
+  ],
+  "fn": "pyopengl-accelerate-3.1.1a1-np113py36_0.tar.bz2",
+  "license": "BSD",
+  "link": {
+    "source": "C:\\Users\\Famille\\Miniconda3\\pkgs\\pyopengl-accelerate-3.1.1a1-np113py36_0",
+    "type": 1
+  },
+  "md5": "2ed6fd8fab7e6cc3004f15e7d409787d",
+  "name": "pyopengl-accelerate",
+  "noarch": null,
+  "platform": "win32",
+  "preferred_env": null,
+  "priority": 1,
+  "requires": [
+    "numpy 1.13",
+    "pyopengl 3.1.1a1",
+    "python 3.6"
+  ],
+  "schannel": "defaults",
+  "size": 134028,
+  "subdir": "win-64",
+  "url": "https://repo.continuum.io/pkgs/free/win-64/pyopengl-accelerate-3.1.1a1-np113py36_0.tar.bz2",
+  "version": "3.1.1a1",
+  "with_features_depends": {}
+}

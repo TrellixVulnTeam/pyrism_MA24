@@ -2,7 +2,7 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.6 virtualenv at C:\Users\Famille\PycharmProjects\pyrism\venv" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.6 (pyrism) (1)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">
