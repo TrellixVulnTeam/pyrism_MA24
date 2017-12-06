@@ -1,5 +1,5 @@
 import sys, os, sdl2, sdl2.ext
-from OpenGL import GL
+from OpenGL.GL import *
 
 from pyrism.window import Window
 from pyrism.shader import Shader
@@ -10,7 +10,7 @@ def run():
     width, height = 640, 480
     window = Window(width, height, "demo")
     shader = Shader(os.path.join(here, '..\\shaders\\standard'), 'standard')
-    GL.glClearColor(0.0, 0.0, 0.0, 1.0)
+    glClearColor(0.0, 0.0, 0.0, 1.0)
     running = True
     while running:
         events = sdl2.ext.get_events()
@@ -18,7 +18,16 @@ def run():
             if event.type == sdl2.SDL_QUIT:
                 running = False
                 break
-        GL.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT)
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+
+        shader.bind()
+        glBegin(GL_TRIANGLES)
+        glVertex3d(-1.0,-1.0, 0.0)
+        glVertex3d(1.0,-1.0, 0.0)
+        glVertex3d(-1.0,1.0, 0.0)
+        glVertex3d(1.0,1.0, 0.0)
+        glEnd()
+
         window.refresh()
 
     del shader
