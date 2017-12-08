@@ -10,10 +10,13 @@ here = os.path.dirname(__file__)
 
 def run():
     width, height = 640, 480
-    model = Model(os.path.join(here, '..\\quad.obj'))
     window = Window(width, height, "demo")
-    shader = Shader(os.path.join(here, '..\\shaders\\standard'), 'standard')
+
+    model = Model(os.path.join(here, '..\\quad.obj'))
+    print("value: ", model.positions)
+    shader = Shader(os.path.join(here, '..\\shaders\\default'), 'surface')
     glClearColor(0.0, 0.0, 0.0, 1.0)
+
     running = True
     while running:
         events = sdl2.ext.get_events()
@@ -23,10 +26,15 @@ def run():
                 break
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
 
+        shader.bind()
+        model.draw()
+
         window.refresh()
 
-    del window
     del shader
+    del model
+    del window
+
     return 0
 
 
