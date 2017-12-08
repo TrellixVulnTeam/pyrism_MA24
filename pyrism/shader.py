@@ -11,9 +11,10 @@ def shader_t(i):
         'compute': 2
     }.get(i, 1)
 
-
 class Shader(object):
-    def __init__(self, file, t_idx):
+    # Important!!! "*args" here specifies the list of attribs for the shader!
+    # FIXME: create proper constructor for every shader type.
+    def __init__(self, file, t_idx, *args):
 
         self.program = glCreateProgram()
 
