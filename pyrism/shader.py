@@ -11,8 +11,9 @@ def shader_t(i):
         'compute': 2
     }.get(i, 1)
 
+
 class Shader(object):
-    # Important!!! "*args" here specifies the list of attribs for the shader!
+    # "*args" here specifies the list of attribs for the shader.
     # FIXME: create proper constructor for every shader type.
     def __init__(self, file, t_idx, *args):
 
@@ -30,7 +31,10 @@ class Shader(object):
         try:
             for shader in self.shaders:
                 glAttachShader(self.program, shader)
+
+            # This is nasty, change this please!!!
             glBindAttribLocation(self.program, 0, "position")
+            glBindAttribLocation(self.program, 1, "texCoord")
             glLinkProgram(self.program)
         except OpenGL.error.NullFunctionError as error:
             pass

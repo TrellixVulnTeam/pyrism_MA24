@@ -29,3 +29,14 @@
 # cmd: C:\Users\Famille\Miniconda3\Scripts\conda remove -p C:/Users/Famille/PycharmProjects/pyrism/env pyopengl-accelerate -y
 -defaults::pyopengl-accelerate-3.1.1a1-np113py36_0
 # remove specs: pyopengl-accelerate
+==> 2017-12-08 15:19:23 <==
+# cmd: C:\Users\Famille\Miniconda3\Scripts\conda install -p C:/Users/Famille/PycharmProjects/pyrism/env pillow -y
++defaults::freetype-2.8-h51f8f2c_1
++defaults::jpeg-9b-hb83a4c4_2
++defaults::libpng-1.6.32-h140d38e_4
++defaults::libtiff-4.0.9-h0f13578_0
++defaults::olefile-0.44-py36h0a7bdd2_0
++defaults::pillow-4.3.0-py36ha40f157_1
++defaults::tk-8.6.7-hcb92d03_3
++defaults::zlib-1.2.11-h8395fce_2
+# install specs: pillow

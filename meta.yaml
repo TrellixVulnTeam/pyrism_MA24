@@ -13,7 +13,7 @@ requirements:
     - cython
     - pySDL2
     - pyopengl
-    - pyopengl-accelerated
+    - pillow
   run:
     - python
 

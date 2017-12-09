@@ -1,0 +1,6 @@
+# 'eff' stands for 'effect'
+# 'in' is the input image path
+# the output image names will have 'out' as a suffix
+
+in pink.jpg
+eff sobel

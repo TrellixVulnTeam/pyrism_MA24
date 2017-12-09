@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<canvas id="canvas" width="640" height="480"></canvas>
+<script type="text/javascript">
+    var c = document.getElementById("canvas")
+    var ctx = c.getContext("2d")
+
+    function randomFloatBetween(minValue,maxValue,precision){
+    if(typeof(precision) == 'undefined'){
+        precision = 2;
+    }
+    return parseFloat(Math.min(minValue + (Math.random() * (maxValue - minValue)),maxValue).toFixed(precision));
+}
+
+    function Vector(x, y) {
+        this.x = x | 0; this.y = y | 0
+        return this
+    }
+
+    Vector.prototype.add = function(other) {
+        this.x += other.x
+        this.y += other.y
+        return this
+    }
+
+    Vector.prototype.mul = function(n) {
+        this.x *= n
+        this.y *= n
+        return this
+    }
+
+    function Particle(pos, scl, vel) {
+        this.pos = pos; this.scl = scl; this.vel = vel
+        this.acc = new Vector()
+        this.alpha = 1.0
+        return this
+    }
+
+    Particle.prototype.update = function() {
+        this.pos.add(this.vel)
+        this.vel.add(this.acc)
+        this.acc.mul(0)
+        this.alpha -= 0.01
+    }
+
+    Particle.prototype.draw = function() {
+        ctx.fillStyle = "rgba(0,0,0,"+ this.alpha +")"
+        ctx.fillRect(this.pos.x - (this.scl.x/2), this.pos.y- (this.scl.y/2), this.scl.x, this.scl.y)
+    }
+
+    Particle.prototype.addForce = function(force){
+        this.acc.add(force)
+    }
+
+    // game variables
+
+    var particles = []
+    var gravity = new Vector(0, 1.4)
+
+
+    document.addEventListener('mousedown', function (event) {
+        for(var i=0; i<25; i++) {
+        vx = randomFloatBetween(-5.0, 5.0, 3)
+        vy = randomFloatBetween(-5.0, 5.0, 3)
+        var particle = new Particle(new Vector(event.x, event.y), new Vector(16, 16), new Vector(vx, vy))
+        particles.push(particle)
+    }
+    })
+
+
+    function update() {
+        for (var i=particles.length-1;i>=0;i--) {
+            particles[i].addForce(gravity)
+            particles[i].update()
+
+            if (particles[i].pos.y + particles[i].scl.y > c.height) {
+                particles[i].vel.y *= randomFloatBetween(-0.50, -0.75)
+            }
+            if (particles[i].alpha < 0.0) {
+                particles.splice(i, 1)
+            }
+        }
+    }
+
+    function draw() {
+        ctx.fillStyle = "rgba(255, 255, 255, 0.1)"
+        ctx.fillRect(0,0, c.width, c.height)
+        update()
+        for (var i=0;i<particles.length;i++) {
+            particles[i].draw()
+        }
+    }
+
+    var refreshIntervalId = setInterval(draw, 30)
+
+</script>
+</body>
+</html>
