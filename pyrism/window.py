@@ -24,6 +24,8 @@ class Window(object):
         video.SDL_GL_SetAttribute(video.SDL_GL_CONTEXT_MINOR_VERSION, 3)
         video.SDL_GL_SetAttribute(video.SDL_GL_CONTEXT_PROFILE_MASK,
                                   video.SDL_GL_CONTEXT_PROFILE_CORE)
+
+        video.SDL_GL_SetAttribute(video.SDL_GL_DEPTH_SIZE, 24)
         self.context = sdl2.SDL_GL_CreateContext(self.window)
 
     def __del__(self):

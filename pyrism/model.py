@@ -20,9 +20,7 @@ class Model(object):
                 message = template.format(type(ex).__name__, ex.args)
                 print(message)
                 exit(-1)
-            self.drawCount = self.indices.size
-
-        print(self.texCoords)
+            self._drawCount = self.indices.size
 
         self._vertexArrayObject = glGenVertexArrays(1)
         glBindVertexArray(self._vertexArrayObject)
@@ -50,7 +48,7 @@ class Model(object):
 
     def draw(self):
         glBindVertexArray(self._vertexArrayObject)
-        glDrawElementsBaseVertex(GL_TRIANGLES, self.drawCount, GL_UNSIGNED_INT, ctypes.c_void_p(0), 0)
+        glDrawElementsBaseVertex(GL_TRIANGLES, self._drawCount, GL_UNSIGNED_INT, ctypes.c_void_p(0), 0)
         glBindVertexArray(0)
 
     @classmethod

@@ -1,53 +1,51 @@
 from OpenGL.GL import *
 from OpenGL.GL import shaders
 
-import OpenGL.error
-
-
-# Shader types dictionary, specifies name of various shader presets and things :)
-def shader_t(i):
-    return {
-        'surface': 1,
-        'compute': 2
-    }.get(i, 1)
-
 
 class Shader(object):
-    # "*args" here specifies the list of attribs for the shader.
     # FIXME: create proper constructor for every shader type.
-    def __init__(self, file, t_idx, *args):
-
-        self.program = glCreateProgram()
-
-        self.shaders = []
-        if shader_t(t_idx) == 1:
+    def __init__(self, file, name):
+        self._program = glCreateProgram()
+        self._uniforms = []
+        self._shaders = []
+        if self.shaders(name) == 1:
             with open(file + '.vert') as content_vert, open(file + '.frag') as context_frag:
-                self.shaders.append(shaders.compileShader(content_vert.read(), GL_VERTEX_SHADER))
-                self.shaders.append(shaders.compileShader(context_frag.read(), GL_FRAGMENT_SHADER))
-        if shader_t(t_idx) == 2:
+                self._shaders.append(shaders.compileShader(content_vert.read(), GL_VERTEX_SHADER))
+                self._shaders.append(shaders.compileShader(context_frag.read(), GL_FRAGMENT_SHADER))
+        elif self.shaders(name) == 2:
             with open(file + '.comp') as content_comp:
-                self.shaders.append(shaders.compileShader(content_comp.read(), GL_COMPUTE_SHADER))
+                self._shaders.append(shaders.compileShader(content_comp.read(), GL_COMPUTE_SHADER))
 
-        try:
-            for shader in self.shaders:
-                glAttachShader(self.program, shader)
+        for shader in self._shaders:
+            glAttachShader(self._program, shader)
 
-            # This is nasty, change this please!!!
-            glBindAttribLocation(self.program, 0, "position")
-            glBindAttribLocation(self.program, 1, "texCoord")
-            glLinkProgram(self.program)
-        except OpenGL.error.NullFunctionError as error:
-            pass
+        # if shader type is 'standard', bind pos and texCoord attribs. this is bare minimum for now.
+        if self.shaders(name) == 1:
+            glBindAttribLocation(self._program, 0, "position")
+            glBindAttribLocation(self._program, 1, "texCoord")
+        glLinkProgram(self._program)
+
+    def __del__(self):
+        for shader in self._shaders:
+            glDetachShader(self._program, shader)
+            glDeleteShader(shader)
+        glDeleteProgram(self._program)
 
     def bind(self):
         glUseProgram(0)
-        glUseProgram(self.program)
+        glUseProgram(self._program)
 
-    def __del__(self):
-        try:
-            for shader in self.shaders:
-                glDetachShader(self.program, shader)
-                glDeleteShader(shader)
-            glDeleteProgram(self.program)
-        except OpenGL.error.NullFunctionError as error:
-            pass
+    def addUniform(self, name):
+        self._uniforms.append(glGetUniformLocation(self._program, name))
+
+    def updateUniform1i(self, id, v0):
+        glUniform1i(self._uniforms[id], v0)
+
+    # Shader types dictionary, specifies name of various shader presets and things :)
+    @classmethod
+    def shaders(cls, name):
+        return {
+            'surface': 1,
+            'compute': 2,
+            'image': 3
+        }.get(name, 1)

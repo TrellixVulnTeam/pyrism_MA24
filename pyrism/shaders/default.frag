@@ -1,11 +1,11 @@
 #version 430
 
 in vec2 texCoord0;
-out vec4 color;
+layout(location = 0) out vec4 color;
 
-uniform sampler2D sampler;
+uniform sampler2D ColorTexture;
+uniform sampler2D DepthTexture;
 
 void main() {
-    color = texture(sampler, texCoord0);
-    //color = vec4(texCoord0, 0, 0);
+    color = texCoord0.x-texture(ColorTexture, texCoord0+vec2(0, sin(texCoord0.x*10)*0.1));
 }

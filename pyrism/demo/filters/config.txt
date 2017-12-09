@@ -1,6 +1,8 @@
-# 'eff' stands for 'effect'
-# 'in' is the input image path
+# 'in' is the input image name
 # the output image names will have 'out' as a suffix
+# 'sh' is the name for a pair of
+# .vert and .frag shaders that can be found in the shaders folder
+
+sh sobel
 
 in pink.jpg
-eff sobel
