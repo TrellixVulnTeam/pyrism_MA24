@@ -5,6 +5,7 @@ from OpenGL.GL import shaders
 class Shader(object):
     # FIXME: create proper constructor for every shader type.
     def __init__(self, file, name):
+        self._program = None
         self._program = glCreateProgram()
         self._uniforms = []
         self._shaders = []
@@ -32,14 +33,25 @@ class Shader(object):
         glDeleteProgram(self._program)
 
     def bind(self):
-        glUseProgram(0)
         glUseProgram(self._program)
+
+    def bindFragDataLocation(self, texture, name):
+        glBindFragDataLocation(self._program, texture, name)
 
     def addUniform(self, name):
         self._uniforms.append(glGetUniformLocation(self._program, name))
 
-    def updateUniform1i(self, id, v0):
-        glUniform1i(self._uniforms[id], v0)
+    def updateUniform1i(self, i, v0):
+        glUniform1i(self._uniforms[i], v0)
+
+    def updateUniform2fv(self, i, v):
+        glUniform2fv(self._uniforms[i], 1, v)
+
+    def updateUniform2f(self, i, v0, v1):
+        glUniform2f(self._uniforms[i], v0, v1)
+
+    def getUniformLocation(self, name):
+        return glGetUniformLocation(self._program, name)
 
     # Shader types dictionary, specifies name of various shader presets and things :)
     @classmethod

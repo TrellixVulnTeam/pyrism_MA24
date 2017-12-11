@@ -190,7 +190,7 @@ SEEK_CUR = 1
 SEEK_END = 2
 
 # Super directory utilities.
-# (Inspired by Eric Raymond; the doc strings are mostly his)
+# (Inspired by Eric Raymond; the docs strings are mostly his)
 
 def makedirs(name, mode=0o777, exist_ok=False):
     """makedirs(name [, mode=0o777][, exist_ok=False])

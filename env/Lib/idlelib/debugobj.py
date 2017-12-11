@@ -1,7 +1,7 @@
 # XXX TO DO:
 # - popup menu
 # - support partial or total redisplay
-# - more doc strings
+# - more docs strings
 # - tooltips
 
 # object browser

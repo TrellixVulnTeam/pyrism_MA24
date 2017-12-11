@@ -7,29 +7,29 @@ default_tip = ct._default_callable_argspec
 
 # Test Class TC is used in multiple get_argspec test methods
 class TC():
-    'doc'
+    'docs'
     tip = "(ai=None, *b)"
-    def __init__(self, ai=None, *b): 'doc'
+    def __init__(self, ai=None, *b): 'docs'
     __init__.tip = "(self, ai=None, *b)"
-    def t1(self): 'doc'
+    def t1(self): 'docs'
     t1.tip = "(self)"
-    def t2(self, ai, b=None): 'doc'
+    def t2(self, ai, b=None): 'docs'
     t2.tip = "(self, ai, b=None)"
-    def t3(self, ai, *args): 'doc'
+    def t3(self, ai, *args): 'docs'
     t3.tip = "(self, ai, *args)"
-    def t4(self, *args): 'doc'
+    def t4(self, *args): 'docs'
     t4.tip = "(self, *args)"
-    def t5(self, ai, b=None, *args, **kw): 'doc'
+    def t5(self, ai, b=None, *args, **kw): 'docs'
     t5.tip = "(self, ai, b=None, *args, **kw)"
-    def t6(no, self): 'doc'
+    def t6(no, self): 'docs'
     t6.tip = "(no, self)"
-    def __call__(self, ci): 'doc'
+    def __call__(self, ci): 'docs'
     __call__.tip = "(self, ci)"
     # attaching .tip to wrapped methods does not work
     @classmethod
-    def cm(cls, a): 'doc'
+    def cm(cls, a): 'docs'
     @staticmethod
-    def sm(b): 'doc'
+    def sm(b): 'docs'
 
 tc = TC()
 
@@ -45,7 +45,7 @@ class Get_signatureTest(unittest.TestCase):
     def test_builtins(self):
 
         # Python class that inherits builtin methods
-        class List(list): "List() doc"
+        class List(list): "List() docs"
 
         # Simulate builtin with no docstring for default tip test
         class SB:  __call__ = None
@@ -111,23 +111,23 @@ bytes() -> empty bytes object''')
         self.assertEqual(signature(f), '()' + '\na' * ct._MAX_LINES)
 
     def test_functions(self):
-        def t1(): 'doc'
+        def t1(): 'docs'
         t1.tip = "()"
-        def t2(a, b=None): 'doc'
+        def t2(a, b=None): 'docs'
         t2.tip = "(a, b=None)"
-        def t3(a, *args): 'doc'
+        def t3(a, *args): 'docs'
         t3.tip = "(a, *args)"
-        def t4(*args): 'doc'
+        def t4(*args): 'docs'
         t4.tip = "(*args)"
-        def t5(a, b=None, *args, **kw): 'doc'
+        def t5(a, b=None, *args, **kw): 'docs'
         t5.tip = "(a, b=None, *args, **kw)"
 
-        doc = '\ndoc' if t1.__doc__ is not None else ''
+        doc = '\ndocs' if t1.__doc__ is not None else ''
         for func in (t1, t2, t3, t4, t5, TC):
             self.assertEqual(signature(func), func.tip + doc)
 
     def test_methods(self):
-        doc = '\ndoc' if TC.__doc__ is not None else ''
+        doc = '\ndocs' if TC.__doc__ is not None else ''
         for meth in (TC.t1, TC.t2, TC.t3, TC.t4, TC.t5, TC.t6, TC.__call__):
             self.assertEqual(signature(meth), meth.tip + doc)
         self.assertEqual(signature(TC.cm), "(a)" + doc)
@@ -135,7 +135,7 @@ bytes() -> empty bytes object''')
 
     def test_bound_methods(self):
         # test that first parameter is correctly removed from argspec
-        doc = '\ndoc' if TC.__doc__ is not None else ''
+        doc = '\ndocs' if TC.__doc__ is not None else ''
         for meth, mtip  in ((tc.t1, "()"), (tc.t4, "(*args)"), (tc.t6, "(self)"),
                             (tc.__call__, '(ci)'), (tc, '(ci)'), (TC.cm, "(a)"),):
             self.assertEqual(signature(meth), mtip + doc)

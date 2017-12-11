@@ -1745,7 +1745,7 @@ class UnexpectedException(Exception):
         return str(self.test)
 
 class DebugRunner(DocTestRunner):
-    r"""Run doc tests but raise an exception as soon as there is a failure.
+    r"""Run docs tests but raise an exception as soon as there is a failure.
 
        If an unexpected exception occurs, an UnexpectedException is raised.
        It contains the test, the example, and the original exception:
@@ -2338,7 +2338,7 @@ def DocTestSuite(module=None, globs=None, extraglobs=None, test_finder=None,
 
     This converts each documentation string in a module that
     contains doctest tests to a unittest test case.  If any of the
-    tests in a doc string fail, then the test case fails.  An exception
+    tests in a docs string fail, then the test case fails.  An exception
     is raised showing the name of the file containing the test and a
     (sometimes approximate) line number.
 
@@ -2595,7 +2595,7 @@ def testsource(module, name):
 
     Provide the module (or dotted name of the module) containing the
     test to be debugged and the name (within the module) of the object
-    with the doc string with tests to be debugged.
+    with the docs string with tests to be debugged.
     """
     module = _normalize_module(module)
     tests = DocTestFinder().find(module)

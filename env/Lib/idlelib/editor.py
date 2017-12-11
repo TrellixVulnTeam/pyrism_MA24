@@ -75,7 +75,7 @@ class EditorWindow(object):
                 if os.path.isdir('/var/www/html/python/'):  # "python2" rpm
                     dochome = '/var/www/html/python/index.html'
                 else:
-                    basepath = '/usr/share/doc/'  # standard location
+                    basepath = '/usr/share/docs/'  # standard location
                     dochome = os.path.join(basepath, pyver,
                                            'Doc', 'index.html')
             elif sys.platform[:3] == 'win':

@@ -70,14 +70,14 @@ class BuildPyTestCase(support.TempdirManager,
         sources = self.mkdtemp()
         open(os.path.join(sources, "__init__.py"), "w").close()
 
-        testdir = os.path.join(sources, "doc")
+        testdir = os.path.join(sources, "docs")
         os.mkdir(testdir)
         open(os.path.join(testdir, "testfile"), "w").close()
 
         os.chdir(sources)
         dist = Distribution({"packages": ["pkg"],
                              "package_dir": {"pkg": ""},
-                             "package_data": {"pkg": ["doc/*"]}})
+                             "package_data": {"pkg": ["docs/*"]}})
         # script_name need not exist, it just need to be initialized
         dist.script_name = os.path.join(sources, "setup.py")
         dist.script_args = ["build"]
@@ -134,7 +134,7 @@ class BuildPyTestCase(support.TempdirManager,
         os.mkdir(pkg_dir)
         open(os.path.join(pkg_dir, "__init__.py"), "w").close()
 
-        docdir = os.path.join(pkg_dir, "doc")
+        docdir = os.path.join(pkg_dir, "docs")
         os.mkdir(docdir)
         open(os.path.join(docdir, "testfile"), "w").close()
 
@@ -143,7 +143,7 @@ class BuildPyTestCase(support.TempdirManager,
 
         os.chdir(sources)
         dist = Distribution({"packages": ["pkg"],
-                             "package_data": {"pkg": ["doc/*"]}})
+                             "package_data": {"pkg": ["docs/*"]}})
         # script_name need not exist, it just need to be initialized
         dist.script_name = os.path.join(sources, "setup.py")
         dist.script_args = ["build"]

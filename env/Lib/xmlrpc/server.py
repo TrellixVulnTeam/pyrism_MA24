@@ -219,7 +219,7 @@ class SimpleXMLRPCDispatcher:
         """Registers the XML-RPC introspection methods in the system
         namespace.
 
-        see http://xmlrpc.usefulinc.com/doc/reserved.html
+        see http://xmlrpc.usefulinc.com/docs/reserved.html
         """
 
         self.funcs.update({'system.listMethods' : self.system_listMethods,

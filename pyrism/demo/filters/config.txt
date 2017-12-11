@@ -5,4 +5,13 @@
 
 sh sobel
 
+#in mug.jpg
+#in plummer.jpg
 in pink.jpg
+#in test.jpg
+#in building2.jpg
+#in IMG_3873.jpg
+#in IMG_3874.jpg
+#in IMG_3875.jpg
+#in IMG_3878.jpg
+#in IMG_3876.jpg

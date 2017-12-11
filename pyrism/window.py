@@ -1,4 +1,4 @@
-from sdl2 import video
+from sdl2.video import *
 import sdl2
 
 
@@ -20,12 +20,18 @@ class Window(object):
             exit(-1)
 
         # Force OpenGL 4.3 'core' context. This is needed for compute shader support.
-        video.SDL_GL_SetAttribute(video.SDL_GL_CONTEXT_MAJOR_VERSION, 4)
-        video.SDL_GL_SetAttribute(video.SDL_GL_CONTEXT_MINOR_VERSION, 3)
-        video.SDL_GL_SetAttribute(video.SDL_GL_CONTEXT_PROFILE_MASK,
-                                  video.SDL_GL_CONTEXT_PROFILE_CORE)
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4)
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3)
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK,
+                                  SDL_GL_CONTEXT_PROFILE_CORE)
 
-        video.SDL_GL_SetAttribute(video.SDL_GL_DEPTH_SIZE, 24)
+        SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8)
+        SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8)
+        SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8)
+        SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8)
+        SDL_GL_SetAttribute(SDL_GL_BUFFER_SIZE, 32)
+        SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24)
+        SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1)
         self.context = sdl2.SDL_GL_CreateContext(self.window)
 
     def __del__(self):
