@@ -176,8 +176,8 @@ class SDistTestCase(BasePyPIRCCommandTestCase):
         # in package_data
         dist.package_data = {'': ['*.cfg', '*.dat'],
                              'somecode': ['*.txt']}
-        self.write_file((self.tmp_dir, 'somecode', 'docs.txt'), '#')
-        self.write_file((self.tmp_dir, 'somecode', 'docs.dat'), '#')
+        self.write_file((self.tmp_dir, 'somecode', 'doc.txt'), '#')
+        self.write_file((self.tmp_dir, 'somecode', 'doc.dat'), '#')
 
         # adding some data in data_files
         data_dir = join(self.tmp_dir, 'data')
@@ -330,7 +330,7 @@ class SDistTestCase(BasePyPIRCCommandTestCase):
 
         # filling data_files by pointing files in package_data
         dist.package_data = {'somecode': ['*.txt']}
-        self.write_file((self.tmp_dir, 'somecode', 'docs.txt'), '#')
+        self.write_file((self.tmp_dir, 'somecode', 'doc.txt'), '#')
         cmd.formats = ['gztar']
         cmd.ensure_finalized()
         cmd.run()

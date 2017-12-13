@@ -87,12 +87,12 @@ def pathdirs():
     return dirs
 
 def getdoc(object):
-    """Get the docs string or comments for an object."""
+    """Get the doc string or comments for an object."""
     result = inspect.getdoc(object) or inspect.getcomments(object)
     return result and re.sub('^ *\n', '', result.rstrip()) or ''
 
 def splitdoc(doc):
-    """Split a docs string into a synopsis line (if any) and the rest."""
+    """Split a doc string into a synopsis line (if any) and the rest."""
     lines = doc.strip().split('\n')
     if len(lines) == 1:
         return lines[0], ''

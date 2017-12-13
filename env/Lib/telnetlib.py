@@ -153,7 +153,7 @@ class Telnet:
     This class has many read_*() methods.  Note that some of them
     raise EOFError when the end of the connection is read, because
     they can return an empty string for other reasons.  See the
-    individual docs strings.
+    individual doc strings.
 
     read_until(expected, [timeout])
         Read until the expected string has been seen, or a timeout is

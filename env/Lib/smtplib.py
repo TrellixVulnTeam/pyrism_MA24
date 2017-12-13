@@ -33,7 +33,7 @@ Example:
 '''
 
 # Author: The Dragon De Monsyne <dragondm@integral.org>
-# ESMTP support, test code and docs fixes added by
+# ESMTP support, test code and doc fixes added by
 #     Eric S. Raymond <esr@thyrsus.com>
 # Better RFC 821 compliance (MAIL and RCPT, and CRLF in data)
 #     by Carey Evans <c.evans@clear.net.nz>, for picky mail servers.

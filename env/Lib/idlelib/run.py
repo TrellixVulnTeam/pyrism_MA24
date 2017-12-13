@@ -187,7 +187,7 @@ def show_socket_error(err, address):
     root.withdraw()
     msg = f"IDLE's subprocess can't connect to {address[0]}:{address[1]}.\n"\
           f"Fatal OSError #{err.errno}: {err.strerror}.\n"\
-          f"See the 'Startup failure' section of the IDLE docs, online at\n"\
+          f"See the 'Startup failure' section of the IDLE doc, online at\n"\
           f"https://docs.python.org/3/library/idle.html#startup-failure"
     showerror("IDLE Subprocess Error", msg, parent=root)
     root.destroy()

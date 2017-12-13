@@ -420,7 +420,7 @@ def _default_mime_types():
         '.css'    : 'text/css',
         '.csv'    : 'text/csv',
         '.dll'    : 'application/octet-stream',
-        '.docs'    : 'application/msword',
+        '.doc'    : 'application/msword',
         '.dot'    : 'application/msword',
         '.dvi'    : 'application/x-dvi',
         '.eml'    : 'message/rfc822',

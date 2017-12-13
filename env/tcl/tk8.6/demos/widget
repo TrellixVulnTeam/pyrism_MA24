@@ -352,40 +352,40 @@ addFormattedText {
     @@demo knightstour  A Knight's tour of the chess board
 
     @@subtitle	Scales and Progress Bars
-    @@demo hscale	Horizontal scale
-    @@demo vscale	Vertical scale
+    @@demos hscale	Horizontal scale
+    @@demos vscale	Vertical scale
     @@new
-    @@demo ttkscale	Themed scale linked to a label with traces
-    @@demo ttkprogress	Progress bar
+    @@demos ttkscale	Themed scale linked to a label with traces
+    @@demos ttkprogress	Progress bar
 
     @@subtitle	Paned Windows and Notebooks
-    @@demo paned1	Horizontal paned window
-    @@demo paned2	Vertical paned window
-    @@demo ttkpane	Themed nested panes
-    @@demo ttknote	Notebook widget
+    @@demos paned1	Horizontal paned window
+    @@demos paned2	Vertical paned window
+    @@demos ttkpane	Themed nested panes
+    @@demos ttknote	Notebook widget
 
     @@subtitle	Menus and Toolbars
-    @@demo menu		Menus and cascades (sub-menus)
-    @@demo menubu	Menu-buttons
-    @@demo ttkmenu	Themed menu buttons
-    @@demo toolbar	Themed toolbar
+    @@demos menu		Menus and cascades (sub-menus)
+    @@demos menubu	Menu-buttons
+    @@demos ttkmenu	Themed menu buttons
+    @@demos toolbar	Themed toolbar
 
     @@subtitle	Common Dialogs
-    @@demo msgbox	Message boxes
-    @@demo filebox	File selection dialog
-    @@demo clrpick	Color picker
-    @@demo fontchoose	Font selection dialog
+    @@demos msgbox	Message boxes
+    @@demos filebox	File selection dialog
+    @@demos clrpick	Color picker
+    @@demos fontchoose	Font selection dialog
 
     @@subtitle	Animation
-    @@demo anilabel	Animated labels
-    @@demo aniwave	Animated wave
-    @@demo pendulum	Pendulum simulation
-    @@demo goldberg	A celebration of Rube Goldberg
+    @@demos anilabel	Animated labels
+    @@demos aniwave	Animated wave
+    @@demos pendulum	Pendulum simulation
+    @@demos goldberg	A celebration of Rube Goldberg
 
     @@subtitle	Miscellaneous
-    @@demo bitmap	The built-in bitmaps
-    @@demo dialog1	A dialog box with a local grab
-    @@demo dialog2	A dialog box with a global grab
+    @@demos bitmap	The built-in bitmaps
+    @@demos dialog1	A dialog box with a local grab
+    @@demos dialog2	A dialog box with a global grab
 }
 
 ##############################################################################
@@ -434,7 +434,7 @@ proc addSeeDismiss {w show {vars {}} {extra {}}} {
 }
 
 # positionWindow --
-# This procedure is invoked by most of the demos to position a new demo
+# This procedure is invoked by most of the demos to position a new demos
 # window.
 #
 # Arguments:
@@ -487,7 +487,7 @@ proc showVars {w args} {
 }
 
 # invoke --
-# This procedure is called when the user clicks on a demo description. It is
+# This procedure is called when the user clicks on a demos description. It is
 # responsible for invoking the demonstration.
 #
 # Arguments:
@@ -496,15 +496,15 @@ proc showVars {w args} {
 proc invoke index {
     global tk_demoDirectory
     set tags [.t tag names $index]
-    set i [lsearch -glob $tags demo-*]
+    set i [lsearch -glob $tags demos-*]
     if {$i < 0} {
 	return
     }
     set cursor [.t cget -cursor]
     .t configure -cursor [::ttk::cursor busy]
     update
-    set demo [string range [lindex $tags $i] 5 end]
-    uplevel 1 [list source [file join $tk_demoDirectory $demo.tcl]]
+    set demos [string range [lindex $tags $i] 5 end]
+    uplevel 1 [list source [file join $tk_demoDirectory $demos.tcl]]
     update
     .t configure -cursor $cursor
 
@@ -513,19 +513,19 @@ proc invoke index {
 
 # showStatus --
 #
-#	Show the name of the demo program in the status bar. This procedure is
-#	called when the user moves the cursor over a demo description.
+#	Show the name of the demos program in the status bar. This procedure is
+#	called when the user moves the cursor over a demos description.
 #
 proc showStatus index {
     set tags [.t tag names $index]
-    set i [lsearch -glob $tags demo-*]
+    set i [lsearch -glob $tags demos-*]
     set cursor [.t cget -cursor]
     if {$i < 0} {
 	.statusBar.lab config -text " "
 	set newcursor [::ttk::cursor text]
     } else {
-	set demo [string range [lindex $tags $i] 5 end]
-	.statusBar.lab config -text [mc "Run the \"%s\" sample program" $demo]
+	set demos [string range [lindex $tags $i] 5 end]
+	.statusBar.lab config -text [mc "Run the \"%s\" sample program" $demos]
 	set newcursor [::ttk::cursor link]
     }
     if {$cursor ne $newcursor} {

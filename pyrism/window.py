@@ -32,10 +32,10 @@ class Window(object):
         SDL_GL_SetAttribute(SDL_GL_BUFFER_SIZE, 32)
         SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24)
         SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1)
-        self.context = sdl2.SDL_GL_CreateContext(self.window)
+        self._context = sdl2.SDL_GL_CreateContext(self.window)
 
     def __del__(self):
-        sdl2.SDL_GL_DeleteContext(self.context)
+        sdl2.SDL_GL_DeleteContext(self._context)
         sdl2.SDL_DestroyWindow(self.window)
         sdl2.SDL_Quit()
 

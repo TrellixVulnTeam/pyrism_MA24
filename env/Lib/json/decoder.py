@@ -21,8 +21,8 @@ class JSONDecodeError(ValueError):
     """Subclass of ValueError with the following additional properties:
 
     msg: The unformatted error message
-    docs: The JSON document being parsed
-    pos: The start index of docs where parsing failed
+    doc: The JSON document being parsed
+    pos: The start index of doc where parsing failed
     lineno: The line corresponding to pos
     colno: The column corresponding to pos
 

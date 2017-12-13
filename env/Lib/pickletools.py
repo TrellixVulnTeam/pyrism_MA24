@@ -1087,7 +1087,7 @@ class OpcodeInfo(object):
         # If the opcode has an argument embedded in the byte string, an
         # instance of ArgumentDescriptor specifying its type.  Note that
         # arg.reader(s) can be used to read and decode the argument from
-        # the bytestream s, and arg.docs documents the format of the raw
+        # the bytestream s, and arg.doc documents the format of the raw
         # argument bytes.  If the opcode doesn't have an argument embedded
         # in the bytestream, arg should be None.
         'arg',
@@ -1723,7 +1723,7 @@ opcodes = [
 
       markobject is a unique object, used by other opcodes to identify a
       region of the stack containing a variable number of objects for them
-      to work on.  See markobject.docs for more detail.
+      to work on.  See markobject.doc for more detail.
       """),
 
     I(name='POP_MARK',

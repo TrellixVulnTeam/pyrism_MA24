@@ -103,6 +103,6 @@ menudefs = [
 ]
 
 if find_spec('turtledemo'):
-    menudefs[-1][1].append(('Turtle Demo', '<<open-turtle-demo>>'))
+    menudefs[-1][1].append(('Turtle Demo', '<<open-turtle-demos>>'))
 
 default_keydefs = idleConf.GetCurrentKeySet()

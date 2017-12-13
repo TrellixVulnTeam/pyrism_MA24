@@ -75,7 +75,7 @@ class EditorWindow(object):
                 if os.path.isdir('/var/www/html/python/'):  # "python2" rpm
                     dochome = '/var/www/html/python/index.html'
                 else:
-                    basepath = '/usr/share/docs/'  # standard location
+                    basepath = '/usr/share/doc/'  # standard location
                     dochome = os.path.join(basepath, pyver,
                                            'Doc', 'index.html')
             elif sys.platform[:3] == 'win':
@@ -192,7 +192,7 @@ class EditorWindow(object):
             text.bind("<<close-all-windows>>", self.flist.close_all_callback)
             text.bind("<<open-class-browser>>", self.open_class_browser)
             text.bind("<<open-path-browser>>", self.open_path_browser)
-            text.bind("<<open-turtle-demo>>", self.open_turtle_demo)
+            text.bind("<<open-turtle-demos>>", self.open_turtle_demo)
 
         self.set_status_bar()
         vbar['command'] = text.yview

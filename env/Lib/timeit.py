@@ -87,7 +87,7 @@ class Timer:
     The constructor takes a statement to be timed, an additional
     statement used for setup, and a timer function.  Both statements
     default to 'pass'; the timer function is platform-dependent (see
-    module docs string).  If 'globals' is specified, the code will be
+    module doc string).  If 'globals' is specified, the code will be
     executed within that namespace (as opposed to inside timeit's
     namespace).
 
@@ -101,7 +101,7 @@ class Timer:
 
     def __init__(self, stmt="pass", setup="pass", timer=default_timer,
                  globals=None):
-        """Constructor.  See class docs string."""
+        """Constructor.  See class doc string."""
         self.timer = timer
         local_ns = {}
         global_ns = _globals() if globals is None else globals

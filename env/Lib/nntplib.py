@@ -1100,7 +1100,7 @@ if __name__ == '__main__':
     import argparse
 
     parser = argparse.ArgumentParser(description="""\
-        nntplib built-in demo - display the latest articles in a newsgroup""")
+        nntplib built-in demos - display the latest articles in a newsgroup""")
     parser.add_argument('-g', '--group', default='gmane.comp.python.general',
                         help='group to fetch messages from (default: %(default)s)')
     parser.add_argument('-s', '--server', default='news.gmane.org',

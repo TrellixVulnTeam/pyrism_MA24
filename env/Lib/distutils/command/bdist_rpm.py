@@ -60,7 +60,7 @@ class bdist_rpm(Command):
         ('packager=', None,
          "RPM packager (eg. \"Jane Doe <jane@example.net>\")"
          "[default: vendor]"),
-        ('docs-files=', None,
+        ('doc-files=', None,
          "list of documentation files (space or comma-separated)"),
         ('changelog=', None,
          "RPM changelog"),
@@ -550,7 +550,7 @@ class bdist_rpm(Command):
             ])
 
         if self.doc_files:
-            spec_file.append('%docs ' + ' '.join(self.doc_files))
+            spec_file.append('%doc ' + ' '.join(self.doc_files))
 
         if self.changelog:
             spec_file.extend([

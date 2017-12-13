@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scene>
+    <name>demo1</name>
+    <author>pyrismguy</author>
+    <date>2017-12-11</date>
+    <objects>
+        <cameras>
+                <camera main="true">
+                    <name>Camera1</name>
+                    <width>800</width>
+                    <height>600</height>
+                    <fov>80</fov>
+                    <forward>0.0 0.0 -1.0</forward>
+                    <up>0.0 1.0 0.0</up>
+                    <transform>
+                        <position>0.0 0.0 0.0</position>
+                        <rotation>0.0 0.0 0.0</rotation>
+                        <scale>1.0 1.0 1.0</scale>
+                    </transform>
+                </camera>
+            </cameras>
+        <shapes>
+                <shape type="ellipse" material="default">
+                    <name>Ellipse1</name>
+                    <transform>
+                        <position>0.0 0.0 -3.0</position>
+                        <rotation>0.0 0.0 0.0</rotation>
+                        <scale>7.64 5.5 7.0</scale>
+                    </transform>
+                </shape>
+                <shape type="sphere" material="default">
+                    <name>Sphere1</name>
+                    <center>0.0 1.0 -3.0</center>
+                    <radius>7.0</radius>
+                </shape>
+                <shape type="sphere" material="default">
+                    <name>Sphere2</name>
+                    <center>-1.0 0.5 -2.5</center>
+                    <radius>3.65</radius>
+                </shape>
+                <shape type="plane" material="default">
+                    <name>Plane1</name>
+                    <position>0.0 0.0 0.0</position>
+                    <normal>0.0 1.0 0.0</normal>
+                </shape>
+            </shapes>
+        <lights>
+                <light type="point">
+                    <name>Light1</name>
+                    <position>0.0 5.0 0.0</position>
+                </light>
+            </lights>
+    </objects>
+</scene>

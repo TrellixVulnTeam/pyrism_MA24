@@ -236,9 +236,9 @@ class HelpsourceEntryokTest(unittest.TestCase):
     def test_entry_ok_helpsource(self):
         dialog = self.Dummy_HelpSource()
         for name, path, result in ((None, None, None),
-                                   (None, 'docs.txt', None),
-                                   ('docs', None, None),
-                                   ('docs', 'docs.txt', ('docs', 'docs.txt'))):
+                                   (None, 'doc.txt', None),
+                                   ('doc', None, None),
+                                   ('doc', 'doc.txt', ('doc', 'doc.txt'))):
             with self.subTest():
                 dialog.name, dialog.path = name, path
                 self.assertEqual(dialog.entry_ok(), result)

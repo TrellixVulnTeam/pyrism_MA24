@@ -117,7 +117,7 @@ _MAX_COLS = 85
 _MAX_LINES = 5  # enough for bytes
 _INDENT = ' '*4  # for wrapped signatures
 _first_param = re.compile(r'(?<=\()\w*\,?\s*')
-_default_callable_argspec = "See source or docs"
+_default_callable_argspec = "See source or doc"
 _invalid_method = "invalid method signature"
 _argument_positional = "\n['/' marks preceding arguments as positional-only]\n"
 
@@ -126,7 +126,7 @@ def get_argspec(ob):
 
     For Python-coded functions and methods, the first line is introspected.
     Delete 'self' parameter for classes (.__init__) and bound methods.
-    The next lines are the first lines of the docs string up to the first
+    The next lines are the first lines of the doc string up to the first
     empty line or _MAX_LINES.    For builtins, this typically includes
     the arguments in addition to the return value.
     '''

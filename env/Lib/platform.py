@@ -39,7 +39,7 @@
 #    1.0.4 - added IronPython support
 #    1.0.3 - added normalization of Windows system name
 #    1.0.2 - added more Windows support
-#    1.0.1 - reformatted to make docs.py happy
+#    1.0.1 - reformatted to make doc.py happy
 #    1.0.0 - reformatted a bit and checked into Python CVS
 #    0.8.0 - added sys.version parser and various new access
 #            APIs (python_version(), python_compiler(), etc.)

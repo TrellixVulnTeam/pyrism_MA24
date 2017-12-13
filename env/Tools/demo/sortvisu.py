@@ -60,7 +60,7 @@ class Array:
                            height=(self.maxvalue+1)*YGRID)
         for i in range(self.size):
             self.items.append(ArrayItem(self, i, data[i]))
-        self.reset("Sort demo, size %d" % self.size)
+        self.reset("Sort demos, size %d" % self.size)
 
     speed = "normal"
 

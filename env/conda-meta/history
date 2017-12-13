@@ -1,4 +1,4 @@
-==> 2017-12-03 22:33:39 <==
+==> 2017-12-11 23:04:46 <==
 # cmd: C:\Users\Famille\Miniconda3\Scripts\conda create -p C:\Users\Famille\PycharmProjects\pyrism\env -y python=3.6
 +defaults::certifi-2017.11.5-py36hb8ac631_0
 +defaults::pip-9.0.1-py36h226ae91_4
@@ -9,34 +9,3 @@
 +defaults::wheel-0.30.0-py36h6c3ec14_1
 +defaults::wincertstore-0.2-py36h7fe50ca_0
 # create specs: python 3.6*
-==> 2017-12-04 01:54:24 <==
-# cmd: C:\Users\Famille\Miniconda3\Scripts\conda install -p C:/Users/Famille/PycharmProjects/pyrism/env cython -y
-+defaults::cython-0.27.3-py36h22f4c84_0
-# install specs: cython
-==> 2017-12-04 02:44:31 <==
-# cmd: C:\Users\Famille\Miniconda3\Scripts\conda install -p C:/Users/Famille/PycharmProjects/pyrism/env pyopengl-accelerate -y
-+defaults::pyopengl-3.1.1a1-np113py36_0
-+defaults::pyopengl-accelerate-3.1.1a1-np113py36_0
-# install specs: pyopengl-accelerate
-==> 2017-12-04 03:41:10 <==
-# cmd: C:\Users\Famille\Miniconda3\Scripts\conda install -p C:/Users/Famille/PycharmProjects/pyrism/env numpy -y
-+defaults::icc_rt-2017.0.4-h97af966_0
-+defaults::intel-openmp-2018.0.0-hd92c6cd_8
-+defaults::mkl-2018.0.1-h2108138_4
-+defaults::numpy-1.13.3-py36ha320f96_0
-# install specs: numpy
-==> 2017-12-06 15:43:24 <==
-# cmd: C:\Users\Famille\Miniconda3\Scripts\conda remove -p C:/Users/Famille/PycharmProjects/pyrism/env pyopengl-accelerate -y
--defaults::pyopengl-accelerate-3.1.1a1-np113py36_0
-# remove specs: pyopengl-accelerate
-==> 2017-12-08 15:19:23 <==
-# cmd: C:\Users\Famille\Miniconda3\Scripts\conda install -p C:/Users/Famille/PycharmProjects/pyrism/env pillow -y
-+defaults::freetype-2.8-h51f8f2c_1
-+defaults::jpeg-9b-hb83a4c4_2
-+defaults::libpng-1.6.32-h140d38e_4
-+defaults::libtiff-4.0.9-h0f13578_0
-+defaults::olefile-0.44-py36h0a7bdd2_0
-+defaults::pillow-4.3.0-py36ha40f157_1
-+defaults::tk-8.6.7-hcb92d03_3
-+defaults::zlib-1.2.11-h8395fce_2
-# install specs: pillow

@@ -124,7 +124,7 @@ class install(Command):
          "skip rebuilding everything (for testing/debugging)"),
 
         # Where to install documentation (eventually!)
-        #('docs-format=', None, "format of documentation to generate"),
+        #('doc-format=', None, "format of documentation to generate"),
         #('install-man=', None, "directory for Unix man pages"),
         #('install-html=', None, "directory for HTML documentation"),
         #('install-info=', None, "directory for GNU info files"),
@@ -367,7 +367,7 @@ class install(Command):
                                    ('build_base', 'build_base'),
                                    ('build_lib', 'build_lib'))
 
-        # Punt on docs directories for now -- after all, we're punting on
+        # Punt on doc directories for now -- after all, we're punting on
         # documentation completely!
 
     def dump_dirs(self, msg):

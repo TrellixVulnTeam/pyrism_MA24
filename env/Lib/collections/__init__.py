@@ -351,7 +351,7 @@ class {typename}(tuple):
 _repr_template = '{name}=%r'
 
 _field_template = '''\
-    {name} = _property(_itemgetter({index:d}), docs='Alias for field number {index:d}')
+    {name} = _property(_itemgetter({index:d}), doc='Alias for field number {index:d}')
 '''
 
 def namedtuple(typename, field_names, *, verbose=False, rename=False, module=None):

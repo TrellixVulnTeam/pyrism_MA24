@@ -5,7 +5,7 @@
 #   - up/down arrow keys to move focus around
 #   - ditto for page up/down, home/end
 #   - left/right arrows to expand/collapse & move out/in
-# - more docs strings
+# - more doc strings
 # - add icons for "file", "module", "class", "method"; better "python" icon
 # - callback for selection???
 # - multiple-item selection

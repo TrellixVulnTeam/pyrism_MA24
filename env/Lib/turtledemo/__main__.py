@@ -7,33 +7,33 @@
 
   This document has two sections:
 
-  (1) How to use the demo viewer
-  (2) How to add your own demos to the demo repository
+  (1) How to use the demos viewer
+  (2) How to add your own demos to the demos repository
 
 
-  (1) How to use the demo viewer.
+  (1) How to use the demos viewer.
 
   Select a demoscript from the example menu.
   The (syntax colored) source code appears in the left
   source code window. IT CANNOT BE EDITED, but ONLY VIEWED!
 
-  The demo viewer windows can be resized. The divider between text
+  The demos viewer windows can be resized. The divider between text
   and canvas can be moved by grabbing it with the mouse. The text font
   size can be changed from the menu and with Control/Command '-'/'+'.
   It can also be changed on most systems with Control-mousewheel
   when the mouse is over the text.
 
-  Press START button to start the demo.
+  Press START button to start the demos.
   Stop execution by pressing the STOP button.
   Clear screen by pressing the CLEAR button.
   Restart by pressing the START button again.
 
   SPECIAL demos, such as clock.py are those which run EVENTDRIVEN.
 
-      Press START button to start the demo.
+      Press START button to start the demos.
 
       - Until the EVENTLOOP is entered everything works
-      as in an ordinary demo script.
+      as in an ordinary demos script.
 
       - When the EVENTLOOP is entered, you control the
       application by using the mouse and/or keys (or it's
@@ -47,17 +47,17 @@
 
    * * * * * * * *
    In some rare situations there may occur interferences/conflicts
-   between events concerning the demo script and those concerning the
-   demo-viewer. (They run in the same process.) Strange behaviour may be
+   between events concerning the demos script and those concerning the
+   demos-viewer. (They run in the same process.) Strange behaviour may be
    the consequence and in the worst case you must close and restart the
    viewer.
    * * * * * * * *
 
 
-   (2) How to add your own demos to the demo repository
+   (2) How to add your own demos to the demos repository
 
    - Place the file in the same directory as turtledemo/__main__.py
-     IMPORTANT! When imported, the demo should not modify the system
+     IMPORTANT! When imported, the demos should not modify the system
      by calling functions in other modules, such as sys, tkinter, or
      turtle. Global variables should be initialized in main().
 
@@ -75,15 +75,15 @@
 
     python -m turtledemo.mydemo  # will then run it
 
-   - If the demo is EVENT DRIVEN, main must return the string
-     "EVENTLOOP". This informs the demo viewer that the script is
+   - If the demos is EVENT DRIVEN, main must return the string
+     "EVENTLOOP". This informs the demos viewer that the script is
      still running and must be stopped by the user!
 
-     If an "EVENTLOOP" demo runs by itself, as with clock, which uses
+     If an "EVENTLOOP" demos runs by itself, as with clock, which uses
      ontimer, or minimal_hanoi, which loops by recursion, then the
      code should catch the turtle.Terminator exception that will be
      raised when the user presses the STOP button.  (Paint is not such
-     a demo; it only acts in response to mouse clicks and movements.)
+     a demos; it only acts in response to mouse clicks and movements.)
 """
 import sys
 import os
@@ -334,7 +334,7 @@ class DemoWindow(object):
         self.dirty = True
         turtle.TurtleScreen._RUNNING = True
         self.configGUI(DISABLED, NORMAL, DISABLED,
-                       "demo running...", "black")
+                       "demos running...", "black")
         self.screen.clear()
         self.screen.mode("standard")
         self.state = RUNNING
